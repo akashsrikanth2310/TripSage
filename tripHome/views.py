@@ -11,8 +11,10 @@ from django.views.decorators.csrf import csrf_exempt
 import requests
 import xmltodict
 
-# method for signing up the user
 def signup(request):
+    """
+     Method for signing up the user
+    """
     if request.user.is_authenticated:
         return redirect('/')
     if request.method == 'POST':
@@ -37,8 +39,10 @@ TYPES_PLACE_MAP = {
     "relaxing": ["art_gallery", "church", "spa"],
 }
 
-# method for log in of the user
 def signin(request):
+    """
+    Method for log in of the user
+    """
     if request.user.is_authenticated:
         return render(request, '/')
     if request.method == 'POST':
@@ -55,8 +59,10 @@ def signin(request):
         form = AuthenticationForm()
         return render(request, 'registration/login.html', {'form': form})
 
-# method for logout of the user
 def signout(request):
+    """
+    Method for logout of the user
+    """
     logout(request)
     return redirect('/')
 
