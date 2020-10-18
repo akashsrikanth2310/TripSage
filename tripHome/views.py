@@ -6,7 +6,7 @@ import json
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth import authenticate, login, logout
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.views.decorators.csrf import csrf_exempt
 import requests
 import xmltodict
@@ -16,7 +16,7 @@ def signup(request):
      Method for signing up the user
     """
     if request.user.is_authenticated:
-        return redirect('/')
+        return_var = redirect('/')
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
         if form.is_valid():
@@ -25,12 +25,13 @@ def signup(request):
             password = form.cleaned_data.get('password1')
             user = authenticate(username=username, password=password)
             login(request, user)
-            return redirect('/')
+            return_var = redirect('/')
         else:
-            return render(request, 'registration/signup.html', {'form': form})
+            return_var = render(request, 'registration/signup.html', {'form': form})
     else:
         form = UserCreationForm()
-        return render(request, 'registration/signup.html', {'form': form})
+        return_var = render(request, 'registration/signup.html', {'form': form})
+    return return_var
 
 # Map for the type of the trip to the places user can visit
 TYPES_PLACE_MAP = {
@@ -44,20 +45,22 @@ def signin(request):
     Method for log in of the user
     """
     if request.user.is_authenticated:
-        return render(request, '/')
+        return_var = render(request, '/')
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            return redirect('/')
+            return_var = redirect('/')
         else:
             form = AuthenticationForm(request.POST)
-            return render(request, 'registration/login.html', {'form': form})
+            return_var = render(request, 'registration/login.html', {'form': form})
     else:
         form = AuthenticationForm()
-        return render(request, 'registration/login.html', {'form': form})
+        return_var = render(request, 'registration/login.html', {'form': form})
+        
+    return return_var
 
 def signout(request):
     """
