@@ -26,7 +26,7 @@ CodeCov and Coverage.py : https://github.com/marketplace/codecov
 
 See UI Mockups at : [TRIPSAGE](http://xd.adobe.com/view/4b11902d-7907-4938-846e-cf4fd00181af-1e42/)
 
-[<img src = "https://github.com/TripSage/TripSage/blob/master/Assets/TripSage%20Playable.png">](https://youtu.be/N0GYVmutWzM)
+[<img src = "https://github.com/TripSage/TripSage/blob/master/Assets/TripSage%20Playable.png">](https://youtu.be/6ZF-kuAXmGc)
 </br>
 </br>
 </br>
