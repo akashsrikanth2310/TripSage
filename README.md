@@ -11,7 +11,7 @@ The only Itinerary planner, you will ever need
 [![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/akashsrikanth2310/TripSage/blob/master/LICENSE)
 [![GitHub issues](https://img.shields.io/github/issues/akashsrikanth2310/TripSage)](https://github.com/akashsrikanth2310/TripSage/issues)
 
-![Watch the video](https://github.com/akashsrikanth2310/TripSage/blob/master/Assets/imageLInk.png)(https://youtu.be/6ZF-kuAXmGc)
+[![Watch the video](https://github.com/akashsrikanth2310/TripSage/blob/master/Assets/imageLInk.png)](https://youtu.be/6ZF-kuAXmGc)
 
 
 **Code Formatter :**
