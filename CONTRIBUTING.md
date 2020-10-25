@@ -17,8 +17,6 @@ The following is a set of guidelines for contributing to Project and its package
 - [Git Commit Messages](#git-commit-messages)
 - [Documentation Styleguide](#documentation-styleguide)
 
-[Selection of tech stack](#Selection of tech stack)
-
 ## Code of Conduct
 
 This project and everyone participating in it is governed by the [Code of Conduct](https://github.com/TripSage/TripSage/blob/master/CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code. Please report unacceptable behavior.
@@ -35,7 +33,7 @@ This project and everyone participating in it is governed by the [Code of Conduc
 
 #### Update README file and requirements.txt files regularly
 
-- Please ensure that the readme file and requirements.txt are updated when ever you make significant change or make use of new packages.
+- Please ensure that the README file and requirements.txt are updated when ever you make significant change or make use of new packages.
 
 ## You are contributing to this repository which is under Apache License: 🏅
 
@@ -56,17 +54,21 @@ Refer [LICENSE](https://github.com/TripSage/TripSage/blob/master/LICENSE) for mo
 
 ## Selection of tech stack
 
-- Why Django? : Written in python, Accelerates custom web application development, Easy to extend and scale
-- Why not Flask? : Not suitable for big applications, No admin site.
+- Why Django?
+    - written in Python (easy!) 
+    - accelerates custom web application development
+    - easy to extend and scale
+- Why not Flask?
+    - not suitable for big applications
+    - no inbuilt admin site which is provided in Django inherently
 
 ## How to start with contributing on this Project!
 
 - Start with User Login Functionality
 - Take a look at views.py - It is responsible for making requests via APIs and can get required response for you!
-- Take a look at URL.py under TripHome. This can save your life from dealing with different urls paths.
-- Then, it all break down to HTML pages, CSS and js files under templates and static folder respectively.
-- For setup instructions please visit: https://github.com/akashsrikanth2310/TripSage/wiki/How-to-Download-and-Run-Application%3F
+- Take a look at urls.py under tripHome directory. This can save your life from dealing with different urls paths.
+- Then, it all breaks down to HTML pages, CSS and js files under templates and static folder respectively.
+- For setup instructions please visit [here](https://github.com/akashsrikanth2310/TripSage/wiki/How-to-Download-and-Run-Application%3F)
 
 ## Issues for you to take care of!
-
-- https://github.com/TripSage/TripSage/issues
+- [Issues](https://github.com/akashsrikanth2310/TripSage/issues)
