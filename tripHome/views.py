@@ -1,6 +1,7 @@
 """
 view for tripHome app
 """
+# pylint: disable-all
 from __future__ import absolute_import
 
 import json
@@ -8,8 +9,6 @@ import os
 import sys
 
 import django
-from django.contrib.auth import authenticate, login, logout
-from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.shortcuts import render, redirect
 from django.test import RequestFactory
 from django.views.decorators.csrf import csrf_exempt
@@ -17,6 +16,10 @@ from django.views.decorators.csrf import csrf_exempt
 sys.path.append(".")
 os.environ['DJANGO_SETTINGS_MODULE'] = 'TripSage.settings'
 django.setup()
+
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+
 
 def signup(request):
     """
@@ -40,12 +43,14 @@ def signup(request):
         return_var = render(request, 'registration/signup.html', {'form': form})
     return return_var
 
+
 # Map for the type of the trip to the places user can visit
 TYPES_PLACE_MAP = {
     "adventurous": ["tourist_attraction", "stadium"],
     "kids": ["amusement_park", "museum"],
     "relaxing": ["art_gallery", "church", "spa"],
 }
+
 
 def signin(request):
     """
@@ -69,6 +74,7 @@ def signin(request):
 
     return return_var
 
+
 def signout(request):
     """
     Method for logout of the user
@@ -86,6 +92,8 @@ def get_response(request):
     # getting the landing page data in form of dictionary
     client_data = json.loads(request.POST["requestData"])
     client_data = client_data + 1
+
+
 #     for city in client_data["destination_selected"]:
 #         complete_data = {}
 #         for types in client_data["tripType"]:
@@ -127,11 +135,13 @@ def index(request):
     # Render the HTML template index.html with the data in the context variable
     return render(request, "index.html")
 
+
 def charlotterelax(request):
     """
     Function to render the charlotte results page
     """
     return render(request, "charlotterelax.html")
+
 
 def charlotteadventurous(request):
     """
@@ -139,11 +149,13 @@ def charlotteadventurous(request):
     """
     return render(request, "charlotteadventurous.html")
 
+
 def charlottekidfriendly(request):
     """
     Function to render the friendly results page
     """
     return render(request, "charlottekidfriendly.html")
+
 
 def raleighrelax(request):
     """
@@ -151,11 +163,13 @@ def raleighrelax(request):
     """
     return render(request, "raleighrelax.html")
 
+
 def raleighadventurous(request):
     """
     Function to render the adventurous results page
     """
     return render(request, "raleighadventurous.html")
+
 
 def raleighkidfriendly(request):
     """
@@ -163,11 +177,13 @@ def raleighkidfriendly(request):
     """
     return render(request, "raleighkidfriendly.html")
 
+
 def ashevillerelax(request):
     """
     Function to render the ashville results page
     """
     return render(request, "ashevillerelax.html")
+
 
 def ashevilleadventurous(request):
     """
@@ -175,13 +191,15 @@ def ashevilleadventurous(request):
     """
     return render(request, "ashevilleadventurous.html")
 
+
 def ashevillekidfriendly(request):
     """
     Function to render the kid friendly results page
     """
     return render(request, "ashevillekidfriendly.html")
 
-#adding tests to check
+
+# adding tests to check
 def test_charlotterelax_method():
     """
     Function to check charlotterelax_method
@@ -189,6 +207,7 @@ def test_charlotterelax_method():
     request = RequestFactory().get(('tripHome//charlotterelax'))
     response = charlotterelax(request)
     assert response.status_code == 200
+
 
 def test_charlotteadventurous_method():
     """
@@ -198,6 +217,7 @@ def test_charlotteadventurous_method():
     response = charlotteadventurous(request)
     assert response.status_code == 200
 
+
 def test_charlottekidfriendly_method():
     """
     Function to check charlottekidfriendly_method
@@ -205,6 +225,7 @@ def test_charlottekidfriendly_method():
     request = RequestFactory().get(('tripHome//charlottekidfriendly'))
     response = charlottekidfriendly(request)
     assert response.status_code == 200
+
 
 def test_raleighrelax_method():
     """
@@ -214,6 +235,7 @@ def test_raleighrelax_method():
     response = raleighrelax(request)
     assert response.status_code == 200
 
+
 def test_raleighadventurous_method():
     """
     Function to check raleighadventurous_metho
@@ -221,6 +243,7 @@ def test_raleighadventurous_method():
     request = RequestFactory().get(('tripHome//raleighadventurous'))
     response = raleighadventurous(request)
     assert response.status_code == 200
+
 
 def test_raleighkidfriendly_method():
     """
@@ -230,6 +253,7 @@ def test_raleighkidfriendly_method():
     response = raleighkidfriendly(request)
     assert response.status_code == 200
 
+
 def test_ashevillerelax_method():
     """
     Function to check ashevillerelax_method
@@ -237,6 +261,7 @@ def test_ashevillerelax_method():
     request = RequestFactory().get(('tripHome//ashevillerelax'))
     response = ashevillerelax(request)
     assert response.status_code == 200
+
 
 def test_ashevilleadventurous_method():
     """
@@ -246,6 +271,7 @@ def test_ashevilleadventurous_method():
     response = ashevilleadventurous(request)
     assert response.status_code == 200
 
+
 def test_ashevillekidfriendly_method():
     """
     Function to check ashevillekidfriendly_method
@@ -254,6 +280,7 @@ def test_ashevillekidfriendly_method():
     response = ashevillekidfriendly(request)
     assert response.status_code == 200
 
+
 def test_results_page_method():
     """
     Function to check results_page_method
@@ -261,6 +288,7 @@ def test_results_page_method():
     request = RequestFactory().get(('tripHome//charlotterelax'))
     response = results_page(request)
     assert response.status_code == 200
+
 
 def test_index_method():
     """
