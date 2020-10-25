@@ -8,15 +8,16 @@ import os
 import sys
 
 import django
+sys.path.append(".")
+os.environ['DJANGO_SETTINGS_MODULE'] = 'TripSage.settings'
+django.setup()
+
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.shortcuts import render, redirect
 from django.test import RequestFactory
 from django.views.decorators.csrf import csrf_exempt
 
-sys.path.append(".")
-os.environ['DJANGO_SETTINGS_MODULE'] = 'TripSage.settings'
-django.setup()
 
 def signup(request):
     """
