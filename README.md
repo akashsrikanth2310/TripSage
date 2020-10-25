@@ -28,10 +28,6 @@ CodeCov and Coverage.py : https://github.com/marketplace/codecov
 
 **UI screenshots :** 
 
-https://github.com/akashsrikanth2310/TripSage/blob/master/Assets/home.png
-
-See UI Mockups at : [TRIPSAGE](http://xd.adobe.com/view/4b11902d-7907-4938-846e-cf4fd00181af-1e42/)
-
 <img src = "https://github.com/akashsrikanth2310/TripSage/blob/master/Assets/home.png">
 <img src = "https://github.com/akashsrikanth2310/TripSage/blob/master/Assets/char.png">
 </br>
@@ -51,7 +47,7 @@ Explore the new of travelling with TripSage.</br>
 
 ### Tools used </br>
 
-We use Django, SQLite3, HTML, CSS, and Javascript. </br>
+We use Django, HTML, CSS, and Javascript. </br>
 </br>
 
 ### New to Django? </br>
